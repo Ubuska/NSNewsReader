@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AlertConfirm</key>
+	<string>Confirm</string>
+	<key>AlertCancel</key>
+	<string>Cancel</string>
+	<key>InvalidURLTitle</key>
+	<string>Incorrect Feed URL</string>
+	<key>InvalidURLMessage</key>
+	<string>Please type valid feed URL</string>
+	<key>DeleteAllTitle</key>
+	<string>Delete all feeds</string>
+	<key>DeleteAllMessage</key>
+	<string>Are you sure you want to delete all feeds and clear cache?</string>
+	<key>AddFeedTitle</key>
+	<string>Add Feed</string>
+	<key>AddFeedMessage</key>
+	<string>Enter the URL of the feed you want to add</string>
+	<key>NoInternetMessage</key>
+	<string>No internet connection avaliable right now, cached data will be shown.</string>
+	<key>NoInternetTitle</key>
+	<string>Connection not avaliable</string>
+	<key>ClearCache</key>
+	<string>Clear Cache</string>
+	<key>DeleteAll</key>
+	<string>Delete all feeds</string>
+	<key>OnlyFavorites</key>
+	<string>Display Only Favorites</string>
+	<key>Menu</key>
+	<string>Menu</string>
+	<key>AddFeed</key>
+	<string>Add Feed</string>
+	<key>Edit</key>
+	<string>Edit</string>
+	<key>Close</key>
+	<string>Close</string>
+</dict>
+</plist>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>MainColor</key>
+	<string>#1D77EF</string>
+	<key>DefaultFeed</key>
+	<string>http://rss.nytimes.com/services/xml/rss/nyt/Africa.xml</string>
+</dict>
+</plist>
