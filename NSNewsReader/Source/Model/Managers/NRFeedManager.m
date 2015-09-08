@@ -101,6 +101,17 @@
 
 - (void) AddFeed:(NSString*) URL
 {
+    // We need to check if we have this URL in Feeds already.
+    for (NRFeed *Feed in Feeds)
+    {
+        if ([URL isEqual:[Feed GetLink]])
+        {
+            // Give user feedback says we already have this URL added.
+            [App ErrorAlreadyHaveURL];
+            return;
+        }
+    }
+    
     // Check internet connection.
     if (![App IsInternetConnectionAvaliable]) return;
     NSURLSessionConfiguration* SessionConfig = [NSURLSessionConfiguration defaultSessionConfiguration];
@@ -216,10 +227,12 @@
 
 // This method must be called only by Parser.
 // For adding Feed objects, use AddFeed method.
+// It also calling sorting algorithm in Feed (can potentially be an option].
 
 - (void) AddFeedObject:(NRFeed*) Feed
 {
     if (![Feeds containsObject:Feed]) [Feeds addObject:Feed];
+    [Feed SortItemsByDate];
     [self Save];
 }
 
@@ -250,6 +263,7 @@
     [FavoriteFeeds removeObjectAtIndex:Index];
     [self Save];
 }
+
 
 // Accessors
 

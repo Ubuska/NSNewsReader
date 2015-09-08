@@ -9,6 +9,7 @@
 #import "NRFeed.h"
 
 @implementation NRFeed
+int QuickSortCount;
 
 #pragma mark - NRFeed Methods
 
@@ -29,6 +30,51 @@
 - (void) AddFeedItem:(NRFeedItem*)FeedItem
 {
     [FeedItems addObject:FeedItem];
+}
+
+- (void) SortItemsByDate
+{
+    QuickSortCount = 0;
+    [self QuickSort:FeedItems];
+    NSLog(@"Quicksort count = %d", QuickSortCount);
+}
+
+// This is quicksort algorithm implementation
+// What it does is it sorts algorithm by publication date (Date parameter)
+// It meant to be used internally.
+- (NSMutableArray*)QuickSort:(NSMutableArray*)UnsortedArray
+{
+    NSMutableArray *LessArray = [[NSMutableArray alloc] init];
+    NSMutableArray *GreaterArray =[[NSMutableArray alloc] init];
+    if ([UnsortedArray count] <1)
+    {
+        return NULL;
+    }
+    int RandomPivotPoint = arc4random() % [UnsortedArray count];
+    NRFeedItem *PivotObject = [UnsortedArray objectAtIndex:RandomPivotPoint];
+    NSDate* PivotValue = [PivotObject GetDate];
+    [UnsortedArray removeObjectAtIndex:RandomPivotPoint];
+    for (NRFeedItem *Item in UnsortedArray)
+    {
+        //This is required to see how many iterations does it take to sort the array using quick sort
+        QuickSortCount++;
+        
+        // If object have unitialized or corrupted Date, we don't want to handle it.
+        if ([Item GetDate] == NULL) [UnsortedArray removeObject:Item];
+        if ([[Item GetDate] laterDate:PivotValue])
+        {
+            [LessArray addObject:Item];
+        }
+        else
+        {
+            [GreaterArray addObject:Item];
+        }
+    }
+    NSMutableArray *SortedArray = [[NSMutableArray alloc] init];
+    [SortedArray addObjectsFromArray:[self QuickSort:LessArray]];
+    [SortedArray addObject:PivotObject];
+    [SortedArray addObjectsFromArray:[self QuickSort:GreaterArray]];
+    return SortedArray;
 }
 
 // Accessors

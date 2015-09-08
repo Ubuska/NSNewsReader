@@ -7,6 +7,7 @@
 #import "Protocols.h"
 #import "NRFeed.h"
 
+
 // Handy macro for accesing singleton.
 #define FeedManager [NRFeedManager SharedInstance]
 

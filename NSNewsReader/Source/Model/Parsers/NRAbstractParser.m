@@ -1,7 +1,9 @@
 #import "NRAbstractParser.h"
+#import "AppDelegate.h"
 
 @implementation NRAbstractParser
 {
+    AppDelegate* App;
     NSMutableString* m_ElementValue;
 }
 
@@ -26,6 +28,7 @@
 //- (void)ParseData:(NSData *)Data Manager:(IMAbstractManager*) ObjectManagerInstance
 - (void) ParseData:(NSData*) Data Feed:(NRFeed*)Feed
 {
+    App = (AppDelegate*) [[UIApplication sharedApplication] delegate];
     ExistingFeed = Feed;
     if (Data && !Parser && !Error)
     {
@@ -62,6 +65,7 @@
     {
         Error = [NSError errorWithDomain:@"Parsing error! Appending nil value." code:-1 userInfo:nil];
         NSLog(@"Parsing error! Appending nil value.");
+        [App ErrorInvalidData];
         [parser abortParsing];
     }
 }
@@ -69,6 +73,7 @@
 - (void)parser:(NSXMLParser *)parser parseErrorOccurred:(NSError *)parseError
 {
     Error = parseError;
+    [App ErrorInvalidData];
     NSLog(@"%@", [NSString stringWithFormat:@"Parsing error code %i, %@, at line: %i, column: %i", [parseError code], [[parser parserError] localizedDescription], [parser lineNumber], [parser columnNumber]]);
 }
 

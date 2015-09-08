@@ -6,5 +6,7 @@
 @property (strong, nonatomic) UIWindow *window;
 
 - (BOOL) IsInternetConnectionAvaliable;
+- (void) ErrorAlreadyHaveURL;
+- (void) ErrorInvalidData;
 @end
 

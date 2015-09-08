@@ -63,4 +63,14 @@
     return CanReach;
 }
 
+// Just handy function to handle Date to NSString convertion
++ (NSString*) ConvertDateToString:(NSDate*)Date
+{
+
+    NSDateFormatter *Formatter = [[NSDateFormatter alloc] init];
+    [Formatter setDateFormat:@"dd.MM.yyyy HH:mm"];
+
+    NSString *StringFromDate = [Formatter stringFromDate:Date];
+    return StringFromDate;
+}
 @end

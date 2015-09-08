@@ -13,4 +13,5 @@
 + (UIColor*) ColorWithHexString:(NSString*)Color;
 + (BOOL) IsURLCorrect:(NSString*)URL;
 + (BOOL) IsInternetConnectionAvaliable;
++ (NSString*) ConvertDateToString:(NSDate*)Date;
 @end

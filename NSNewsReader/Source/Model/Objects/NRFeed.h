@@ -4,6 +4,13 @@
 #import <Foundation/Foundation.h>
 #import "NRFeedItem.h"
 
+
+typedef enum
+{
+    EST_Ascending,
+    EST_Descending
+} ESortingType;
+
 @interface NRFeed : NSObject <NSCoding>
 {
     NSMutableArray* FeedItems;
@@ -18,6 +25,9 @@
 // Mutators
 - (void) AddFeedItem:(NRFeedItem*)FeedItem;
 - (void) ClearAll;
+
+// Public function for sorting by publication date.
+- (void) SortItemsByDate;
 
 // Accessors
 - (NSUInteger) GetItemsNumber;

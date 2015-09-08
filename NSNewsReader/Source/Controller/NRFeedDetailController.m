@@ -3,7 +3,9 @@
 #import "NRFeedManager.h"
 
 @interface NRFeedDetailController ()
-
+{
+    NRFeedItem* FeedItem;
+}
 @end
 
 @implementation NRFeedDetailController
@@ -21,12 +23,18 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)OpenInBrowser:(id)sender
+{
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[FeedItem GetLink]]];
+}
+
 - (void) UpdateView
 {
     NRFeed* Feed = [FeedManager GetFeedByIndex:self.IndexPath.section];
-    NRFeedItem* FeedItem = [Feed GetFeedItemByIndex:self.IndexPath.row];
+    FeedItem = [Feed GetFeedItemByIndex:self.IndexPath.row];
     self.Title.text = [FeedItem GetTitle];
     self.Content.text = [FeedItem GetContent];
+    self.Image.imageURL = [NSURL URLWithString:[FeedItem GetImageURL]];
 }
 
 

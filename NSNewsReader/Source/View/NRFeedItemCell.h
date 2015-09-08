@@ -14,5 +14,6 @@
 @property IBOutlet AsyncImageView* Image;
 @property IBOutlet UILabel* Title;
 @property IBOutlet UILabel* Summary;
+@property IBOutlet UILabel* PublicationDate;
 
 @end

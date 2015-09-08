@@ -2,6 +2,14 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>InvalidDataTitle</key>
+	<string>Invalid data</string>
+	<key>InvalidDataMessage</key>
+	<string>Please ensure you typed correct URL</string>
+	<key>AlreadyAddedURLTitle</key>
+	<string>URL already added</string>
+	<key>AlreadyAddedMessage</key>
+	<string>This URL is already added to your feeds. Please enter another URL.</string>
 	<key>AlertConfirm</key>
 	<string>Confirm</string>
 	<key>AlertCancel</key>

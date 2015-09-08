@@ -3,6 +3,7 @@
 #import "NRFeedItemCell.h"
 #import "NRFeedDetailController.h"
 #import "AppDelegate.h"
+#import "Tools.h"
 
 @interface NRFeedMasterController ()
 {
@@ -96,6 +97,7 @@
         Cell.Image.imageURL = [NSURL URLWithString:[FeedItem GetImageURL]];
         Cell.Title.text = [FeedItem GetTitle];
         Cell.Summary.text = [FeedItem GetSummary];
+        Cell.PublicationDate.text = [Tools ConvertDateToString:[FeedItem GetDate]];
     }
 }
 

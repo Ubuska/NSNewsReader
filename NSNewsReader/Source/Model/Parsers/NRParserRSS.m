@@ -46,14 +46,22 @@
         NSDate *Date = [DateFormatter dateFromString:ElementValue];
         [CurrentItem SetDate:Date];
     }
-    IfElement(@"url") [CurrentItem SetImageURL:ElementValue];
+    IfElement(@"enclosure")
+    {
+        NSString* ImageURL = [AttributesDict valueForKey:@"url"];
+        [CurrentItem SetImageURL:ImageURL];
+    }
+    IfElement(@"link")
+    {
+        if (CurrentItem) [CurrentItem SetLink:ElementValue];
+    }
     
     IfElement(@"description")
     {
 
         if (CurrentItem)
         {
-            NSString* ShortSummary = [ElementValue substringToIndex:30];
+            NSString* ShortSummary = [ElementValue substringToIndex:120];
             [CurrentItem SetSummary:ShortSummary];
             [CurrentItem SetContent:ElementValue];
         }

@@ -33,19 +33,26 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Google Images-100.png" translatesAutoresizingMaskIntoConstraints="NO" id="rH4-Ld-S7o" customClass="AsyncImageView">
-                                                    <rect key="frame" x="8" y="14" width="70" height="70"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Summary" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5hT-cR-06U">
-                                                    <rect key="frame" x="86" y="41" width="226" height="50"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="139.132." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3un-un-KZr">
+                                                    <rect key="frame" x="8" y="73" width="70" height="21"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="8"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5hT-cR-06U">
+                                                    <rect key="frame" x="86" y="42" width="226" height="50"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Google Images-100.png" translatesAutoresizingMaskIntoConstraints="NO" id="rH4-Ld-S7o" customClass="AsyncImageView">
+                                                    <rect key="frame" x="8" y="8" width="70" height="70"/>
+                                                </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="Image" destination="rH4-Ld-S7o" id="rup-NE-5jA"/>
+                                            <outlet property="PublicationDate" destination="3un-un-KZr" id="caX-Qe-IxN"/>
                                             <outlet property="Summary" destination="5hT-cR-06U" id="Ulh-ug-5zp"/>
                                             <outlet property="Title" destination="cue-YJ-QZo" id="gYe-dx-fyH"/>
                                         </connections>
@@ -87,7 +94,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="512" y="389"/>
+            <point key="canvasLocation" x="512" y="387"/>
         </scene>
         <!--Browse Favorites Controller-->
         <scene sceneID="UHt-69-Ob9">
@@ -366,34 +373,82 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="By2-Rs-uoU">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hc0-mZ-OTy">
-                                        <rect key="frame" x="8" y="8" width="304" height="77"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="97s-PD-4rZ">
+                                        <rect key="frame" x="8" y="398" width="304" height="42"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="77" id="jJd-da-DSj"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="97s-PD-4rZ">
-                                        <rect key="frame" x="8" y="93" width="304" height="467"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="414" id="UnX-5Q-oV5"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="42" id="UnX-5Q-oV5"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="15"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Stw-GB-G9G" customClass="AsyncImageView">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="320" id="YD2-F8-EPu"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MON-a1-SgS">
+                                        <rect key="frame" x="8" y="350" width="304" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="YsN-fN-F70"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="21"/>
+                                        <state key="normal" title="Open in browser">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="OpenInBrowser:" destination="tw0-dk-FIL" eventType="touchUpInside" id="EFe-Uo-Nc6"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" misplaced="YES" text="Дата публикации:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YV9-GY-Q39">
+                                        <rect key="frame" x="8" y="328" width="152" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="MLR-k5-C5S"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="13.06.2015" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xlL-ZX-I8T">
+                                        <rect key="frame" x="160" y="328" width="152" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="YIw-ba-ckw"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hc0-mZ-OTy">
+                                        <rect key="frame" x="8" y="214" width="304" height="89"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="89" id="jJd-da-DSj"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="24"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="Stw-GB-G9G" firstAttribute="bottom" secondItem="hc0-mZ-OTy" secondAttribute="bottom" constant="17" id="5ii-jW-Rt8"/>
+                                    <constraint firstAttribute="trailing" secondItem="xlL-ZX-I8T" secondAttribute="trailing" constant="8" id="Avc-lF-1pV"/>
+                                    <constraint firstItem="xlL-ZX-I8T" firstAttribute="top" secondItem="hc0-mZ-OTy" secondAttribute="bottom" constant="25" id="DYI-Es-bvM"/>
                                     <constraint firstItem="hc0-mZ-OTy" firstAttribute="centerX" secondItem="By2-Rs-uoU" secondAttribute="centerX" id="IUO-Hv-bhu"/>
+                                    <constraint firstItem="YV9-GY-Q39" firstAttribute="top" secondItem="hc0-mZ-OTy" secondAttribute="bottom" constant="25" id="JcN-dH-H6k"/>
+                                    <constraint firstItem="Stw-GB-G9G" firstAttribute="top" secondItem="By2-Rs-uoU" secondAttribute="top" id="NyK-P0-o6g"/>
                                     <constraint firstAttribute="trailing" secondItem="97s-PD-4rZ" secondAttribute="trailing" constant="8" id="P20-b0-NZL"/>
+                                    <constraint firstItem="Stw-GB-G9G" firstAttribute="leading" secondItem="By2-Rs-uoU" secondAttribute="leading" id="QXE-hl-FxB"/>
+                                    <constraint firstItem="97s-PD-4rZ" firstAttribute="top" secondItem="MON-a1-SgS" secondAttribute="bottom" constant="8" id="RNu-3J-RBu"/>
                                     <constraint firstItem="hc0-mZ-OTy" firstAttribute="leading" secondItem="By2-Rs-uoU" secondAttribute="leading" constant="8" id="Ry9-T5-aOL"/>
-                                    <constraint firstItem="hc0-mZ-OTy" firstAttribute="top" secondItem="By2-Rs-uoU" secondAttribute="top" constant="8" id="WCS-Ad-H5q"/>
-                                    <constraint firstItem="97s-PD-4rZ" firstAttribute="top" secondItem="hc0-mZ-OTy" secondAttribute="bottom" constant="8" id="ehs-nG-v5n"/>
+                                    <constraint firstItem="YV9-GY-Q39" firstAttribute="leading" secondItem="By2-Rs-uoU" secondAttribute="leading" constant="8" id="cl9-48-UUd"/>
+                                    <constraint firstAttribute="trailing" secondItem="MON-a1-SgS" secondAttribute="trailing" constant="8" id="fGZ-C9-Imn"/>
+                                    <constraint firstItem="MON-a1-SgS" firstAttribute="top" secondItem="hc0-mZ-OTy" secondAttribute="bottom" constant="47" id="ib0-dv-nuD"/>
+                                    <constraint firstItem="MON-a1-SgS" firstAttribute="leading" secondItem="By2-Rs-uoU" secondAttribute="leading" constant="8" id="mhj-lm-kKN"/>
                                     <constraint firstAttribute="trailing" secondItem="hc0-mZ-OTy" secondAttribute="trailing" constant="8" id="nxy-UW-yzY"/>
-                                    <constraint firstItem="97s-PD-4rZ" firstAttribute="bottom" secondItem="By2-Rs-uoU" secondAttribute="bottomMargin" id="q6Z-5E-StU"/>
+                                    <constraint firstItem="xlL-ZX-I8T" firstAttribute="leading" secondItem="YV9-GY-Q39" secondAttribute="trailing" id="pCL-1v-fhK"/>
+                                    <constraint firstAttribute="trailing" secondItem="Stw-GB-G9G" secondAttribute="trailing" id="qAF-uM-ARR"/>
                                     <constraint firstItem="97s-PD-4rZ" firstAttribute="leading" secondItem="By2-Rs-uoU" secondAttribute="leading" constant="8" id="sCF-83-xfA"/>
+                                    <constraint firstAttribute="bottom" secondItem="hc0-mZ-OTy" secondAttribute="bottom" constant="265" id="vmH-lP-7RH"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -408,6 +463,8 @@
                     <navigationItem key="navigationItem" id="1dR-Nm-RyG"/>
                     <connections>
                         <outlet property="Content" destination="97s-PD-4rZ" id="FkV-DU-Mg5"/>
+                        <outlet property="Date" destination="xlL-ZX-I8T" id="SFJ-AB-l5H"/>
+                        <outlet property="Image" destination="Stw-GB-G9G" id="I5Y-hZ-Qq2"/>
                         <outlet property="Title" destination="hc0-mZ-OTy" id="DuU-0N-PIL"/>
                     </connections>
                 </viewController>
