@@ -1,0 +1,3 @@
+[submodule "Submodules/ToolKit"]
+	path = Submodules/ToolKit
+	url = https://gitlab.com/ID-IOS/idtoolkit.git
