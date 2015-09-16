@@ -7,6 +7,7 @@
 @implementation NRFeedManager
 {
     AppDelegate* App;
+    BOOL bTest;
 }
 + (id)SharedInstance
 {
@@ -55,11 +56,8 @@
 
 - (void) ClearCache
 {
-    NSMutableArray* TempFeeds = [[NSMutableArray alloc] init];
-    NSMutableArray* TempFavoriteFeeds = [[NSMutableArray alloc] init];
-    
-    TempFeeds = Feeds;
-    TempFavoriteFeeds = FavoriteFeeds;
+    NSMutableArray* TempFeeds = Feeds;
+    NSMutableArray* TempFavoriteFeeds = FavoriteFeeds;
     
     Feeds = [[NSMutableArray alloc] init];
     FavoriteFeeds = [[NSMutableArray alloc] init];
@@ -129,14 +127,17 @@
 
 - (void) UpdateFeed:(NRFeed*) Feed
 {
+    if (bTest)
+    {
+        [self.UpdateViewDelegate UpdateView];
+        return;
+    
+    }
     // Check internet connection.
     if (![App IsInternetConnectionAvaliable]) return;
     
+    
     // Firstly, we download data.
-    
-    NSURLSessionConfiguration* SessionConfig = [NSURLSessionConfiguration defaultSessionConfiguration];
-    NSURLSession *Session = [NSURLSession sessionWithConfiguration:SessionConfig delegate:self delegateQueue:nil];
-    
     NSURL* DownloadTaskURL = [NSURL URLWithString:[Feed GetLink]];
     NSURLSessionDownloadTask *DownloadDataTask = [[NSURLSession sharedSession] downloadTaskWithURL:DownloadTaskURL completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error)
     {
@@ -157,7 +158,7 @@
         [FileManager copyItemAtURL:location toURL:DestinationURL error:&FileManagerError];
         
         // Actual data.
-        NSData* ContentData = [FileManager contentsAtPath:location];
+        NSData* ContentData = [FileManager contentsAtPath:[location absoluteString]];
         
         NRAbstractParser* Parser;
         
@@ -213,6 +214,7 @@
 
 - (void) AddFeedTest
 {
+    bTest = YES;
     NRFeed* NewFeed = [[NRFeed alloc]init];
     [NewFeed SetTitle:@"Feed"];
     [Feeds addObject:NewFeed];
@@ -221,7 +223,11 @@
     {
         NRFeedItem* NewFeedItem = [[NRFeedItem alloc] init];
         [NewFeedItem SetTitle:@"Feed Item"];
+        NSString* One = @"Content ";
+        NSString* Two = [NSString stringWithFormat:@"%d", i+1];
+        [NewFeedItem SetContent:[NSString stringWithFormat:@"%@%@", One, Two]];
         [NewFeed AddFeedItem:NewFeedItem];
+        
     }
 }
 

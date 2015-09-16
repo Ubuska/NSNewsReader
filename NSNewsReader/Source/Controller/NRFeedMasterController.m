@@ -5,6 +5,8 @@
 #import "AppDelegate.h"
 #import "Tools.h"
 
+#import "NRFeedDetail-ViewModel.h"
+
 @interface NRFeedMasterController ()
 {
     NSIndexPath* IP;
@@ -24,10 +26,6 @@
     // Creating refresh button.
     UIBarButtonItem *Button = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(OnRefreshPress:)];
     self.navigationItem.rightBarButtonItem = Button;
-    
-    // Check internet connection.
-    App = (AppDelegate*) [[UIApplication sharedApplication] delegate];
-    [App IsInternetConnectionAvaliable];
 
 }
 
@@ -40,15 +38,18 @@
 {
     if ([segue.identifier  isEqual: @"FeedDetailSegue"])
     {
-        NRFeedDetailController* DetailController = (NRFeedDetailController*) segue.destinationViewController;
-        if (DetailController) DetailController.IndexPath = IP;
+        NRFeed *feedItem = [FeedManager GetFeedByIndex:IP.section];
+        id detailObject = [feedItem GetFeedItemByIndex:IP.row];
+        NRFeedDetail_ViewModel* viewModel = [[NRFeedDetail_ViewModel alloc] initWithObject:detailObject];
+        NRFeedDetailController* detailController = (NRFeedDetailController*) segue.destinationViewController;
+        [detailController setViewModel:viewModel];
     }
 }
 
 - (IBAction)OnRefreshPress:(id)sender
 {
     FeedManager.UpdateViewDelegate = self;
-    [FeedManager UpdateFeeds];
+   // [FeedManager UpdateFeeds];
 }
 
 - (IBAction)OnMenuPress:(id)sender
@@ -94,10 +95,12 @@
     {
         NRFeed* Feed = [FeedManager GetFeedByIndex:indexPath.section];
         NRFeedItem* FeedItem = [Feed GetFeedItemByIndex:indexPath.row];
+        Cell.viewModel = 
+        /*
         Cell.Image.imageURL = [NSURL URLWithString:[FeedItem GetImageURL]];
         Cell.Title.text = [FeedItem GetTitle];
         Cell.Summary.text = [FeedItem GetSummary];
-        Cell.PublicationDate.text = [Tools ConvertDateToString:[FeedItem GetDate]];
+        Cell.PublicationDate.text = [Tools ConvertDateToString:[FeedItem GetDate]];*/
     }
 }
 

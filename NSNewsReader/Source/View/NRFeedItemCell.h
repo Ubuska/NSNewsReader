@@ -8,12 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "AsyncImageView.h"
+#import "NRFeedItemCell-ViewModel.h"
 
 @interface NRFeedItemCell : UITableViewCell
 
-@property IBOutlet AsyncImageView* Image;
-@property IBOutlet UILabel* Title;
-@property IBOutlet UILabel* Summary;
-@property IBOutlet UILabel* PublicationDate;
+@property (nonatomic, readonly) NRFeedItemCell_ViewModel* viewModel;
+
 
 @end

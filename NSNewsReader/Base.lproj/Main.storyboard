@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="eqb-Tj-9mP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="eqb-Tj-9mP">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -401,17 +402,14 @@
                                             <action selector="OpenInBrowser:" destination="tw0-dk-FIL" eventType="touchUpInside" id="EFe-Uo-Nc6"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" misplaced="YES" text="Дата публикации:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YV9-GY-Q39">
-                                        <rect key="frame" x="8" y="328" width="152" height="24"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="24" id="MLR-k5-C5S"/>
-                                        </constraints>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Дата публикации:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YV9-GY-Q39">
+                                        <rect key="frame" x="8" y="328" width="191" height="24"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="13.06.2015" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xlL-ZX-I8T">
-                                        <rect key="frame" x="160" y="328" width="152" height="24"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="13.06.2015" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xlL-ZX-I8T">
+                                        <rect key="frame" x="226" y="328" width="86" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="YIw-ba-ckw"/>
                                         </constraints>
@@ -433,22 +431,23 @@
                                     <constraint firstItem="Stw-GB-G9G" firstAttribute="bottom" secondItem="hc0-mZ-OTy" secondAttribute="bottom" constant="17" id="5ii-jW-Rt8"/>
                                     <constraint firstAttribute="trailing" secondItem="xlL-ZX-I8T" secondAttribute="trailing" constant="8" id="Avc-lF-1pV"/>
                                     <constraint firstItem="xlL-ZX-I8T" firstAttribute="top" secondItem="hc0-mZ-OTy" secondAttribute="bottom" constant="25" id="DYI-Es-bvM"/>
+                                    <constraint firstItem="YV9-GY-Q39" firstAttribute="leading" secondItem="MON-a1-SgS" secondAttribute="leading" id="HGV-BJ-1Om"/>
                                     <constraint firstItem="hc0-mZ-OTy" firstAttribute="centerX" secondItem="By2-Rs-uoU" secondAttribute="centerX" id="IUO-Hv-bhu"/>
-                                    <constraint firstItem="YV9-GY-Q39" firstAttribute="top" secondItem="hc0-mZ-OTy" secondAttribute="bottom" constant="25" id="JcN-dH-H6k"/>
                                     <constraint firstItem="Stw-GB-G9G" firstAttribute="top" secondItem="By2-Rs-uoU" secondAttribute="top" id="NyK-P0-o6g"/>
                                     <constraint firstAttribute="trailing" secondItem="97s-PD-4rZ" secondAttribute="trailing" constant="8" id="P20-b0-NZL"/>
+                                    <constraint firstItem="YV9-GY-Q39" firstAttribute="baseline" secondItem="xlL-ZX-I8T" secondAttribute="baseline" id="Pbw-nl-rC0"/>
                                     <constraint firstItem="Stw-GB-G9G" firstAttribute="leading" secondItem="By2-Rs-uoU" secondAttribute="leading" id="QXE-hl-FxB"/>
                                     <constraint firstItem="97s-PD-4rZ" firstAttribute="top" secondItem="MON-a1-SgS" secondAttribute="bottom" constant="8" id="RNu-3J-RBu"/>
                                     <constraint firstItem="hc0-mZ-OTy" firstAttribute="leading" secondItem="By2-Rs-uoU" secondAttribute="leading" constant="8" id="Ry9-T5-aOL"/>
-                                    <constraint firstItem="YV9-GY-Q39" firstAttribute="leading" secondItem="By2-Rs-uoU" secondAttribute="leading" constant="8" id="cl9-48-UUd"/>
                                     <constraint firstAttribute="trailing" secondItem="MON-a1-SgS" secondAttribute="trailing" constant="8" id="fGZ-C9-Imn"/>
+                                    <constraint firstItem="xlL-ZX-I8T" firstAttribute="leading" secondItem="YV9-GY-Q39" secondAttribute="trailing" constant="27" id="ham-L0-3wx"/>
                                     <constraint firstItem="MON-a1-SgS" firstAttribute="top" secondItem="hc0-mZ-OTy" secondAttribute="bottom" constant="47" id="ib0-dv-nuD"/>
                                     <constraint firstItem="MON-a1-SgS" firstAttribute="leading" secondItem="By2-Rs-uoU" secondAttribute="leading" constant="8" id="mhj-lm-kKN"/>
                                     <constraint firstAttribute="trailing" secondItem="hc0-mZ-OTy" secondAttribute="trailing" constant="8" id="nxy-UW-yzY"/>
-                                    <constraint firstItem="xlL-ZX-I8T" firstAttribute="leading" secondItem="YV9-GY-Q39" secondAttribute="trailing" id="pCL-1v-fhK"/>
                                     <constraint firstAttribute="trailing" secondItem="Stw-GB-G9G" secondAttribute="trailing" id="qAF-uM-ARR"/>
                                     <constraint firstItem="97s-PD-4rZ" firstAttribute="leading" secondItem="By2-Rs-uoU" secondAttribute="leading" constant="8" id="sCF-83-xfA"/>
                                     <constraint firstAttribute="bottom" secondItem="hc0-mZ-OTy" secondAttribute="bottom" constant="265" id="vmH-lP-7RH"/>
+                                    <constraint firstItem="YV9-GY-Q39" firstAttribute="firstBaseline" secondItem="xlL-ZX-I8T" secondAttribute="firstBaseline" id="y71-m5-A9S"/>
                                 </constraints>
                             </scrollView>
                         </subviews>

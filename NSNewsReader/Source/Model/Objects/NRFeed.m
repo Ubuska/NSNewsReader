@@ -17,22 +17,22 @@ int QuickSortCount;
 {
     if (self = [super init])
     {
-        FeedItems = [NSMutableArray arrayWithCapacity:0];
+        FeedItems = [[NSMutableArray alloc] init];
     }
-    return self;  
+    return self;
 }
 
 // Mutators
-- (void) ClearAll
+- (void)ClearAll
 {
     [FeedItems removeAllObjects];
 }
-- (void) AddFeedItem:(NRFeedItem*)FeedItem
+- (void)AddFeedItem:(NRFeedItem*)FeedItem
 {
     [FeedItems addObject:FeedItem];
 }
 
-- (void) SortItemsByDate
+- (void)SortItemsByDate
 {
     QuickSortCount = 0;
     [self QuickSort:FeedItems];
@@ -79,12 +79,12 @@ int QuickSortCount;
 
 // Accessors
 
-- (NSUInteger) GetItemsNumber
+- (NSUInteger)GetItemsNumber
 {
     return [FeedItems count];
 }
 
-- (NRFeedItem*) GetFeedItemByIndex:(NSUInteger)Index
+- (NRFeedItem*)GetFeedItemByIndex:(NSUInteger)Index
 {
     return FeedItems[Index];
 }

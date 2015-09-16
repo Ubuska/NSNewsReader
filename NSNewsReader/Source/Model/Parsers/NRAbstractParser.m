@@ -7,6 +7,7 @@
     NSMutableString* m_ElementValue;
 }
 
+- (void)Initialize{}
 
 #pragma mark - Init
 

@@ -1,11 +1,10 @@
 
 #import "NRFeedDetailController.h"
-#import "NRFeedManager.h"
+#import "NRFeedDetail-ViewModel.h"
+#import <ReactiveCocoa/ReactiveCocoa.h>
 
 @interface NRFeedDetailController ()
-{
-    NRFeedItem* FeedItem;
-}
+@property RACSignal* titleSignal;
 @end
 
 @implementation NRFeedDetailController
@@ -13,29 +12,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self UpdateView];
-    // Do any additional setup after loading the view.
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [self bindViewModel];
 }
 
 - (IBAction)OpenInBrowser:(id)sender
 {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[FeedItem GetLink]]];
+   // [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[self.viewModel ]]];
 }
 
-- (void) UpdateView
+-(void)bindViewModel
 {
-    NRFeed* Feed = [FeedManager GetFeedByIndex:self.IndexPath.section];
-    FeedItem = [Feed GetFeedItemByIndex:self.IndexPath.row];
-    self.Title.text = [FeedItem GetTitle];
-    self.Content.text = [FeedItem GetContent];
-    self.Image.imageURL = [NSURL URLWithString:[FeedItem GetImageURL]];
+    RAC(self, Title.text) = [RACObserve(self, viewModel.titleText) ignore:nil];
+    RAC(self, Content.text) = [RACObserve(self, viewModel.contentText) ignore:nil];
+    RAC(self, Date.text) = [RACObserve(self, viewModel.dateText) ignore:nil];
 }
-
 
 @end
